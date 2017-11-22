@@ -16,18 +16,12 @@ class ViewController: UIViewController {
         return (cardButtons.count + 1) / 2
     }
     
-    private(set) var flipCount = 0 {
-        didSet {
-            updateFlipCountLabel()
-        }
-    }
-    
     private func updateFlipCountLabel() {
         let attributes: [NSAttributedStringKey:Any] = [
             .strokeWidth : 5.0,
             .strokeColor : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1),
             ];
-        let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
+        let attributedString = NSAttributedString(string: "Flips: \(game.flipCount)", attributes: attributes)
         flipCountLabel.attributedText = attributedString
     }
 
@@ -40,7 +34,6 @@ class ViewController: UIViewController {
     @IBOutlet private var cardButtons: [UIButton]!
     
     @IBAction private func touchCard(_ sender: UIButton) {
-        flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
@@ -52,7 +45,6 @@ class ViewController: UIViewController {
     @IBAction func newGameTapped() {
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         theme = pickRandomTheme()
-        flipCount = 0;
         updateViewFromModel()
     }
     
@@ -68,6 +60,7 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
         }
+        updateFlipCountLabel()
     }
     
     private lazy var theme = pickRandomTheme()

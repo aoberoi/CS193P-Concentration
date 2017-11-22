@@ -12,6 +12,8 @@ struct Concentration {
     
     private(set) var cards = [Card]()
     
+    private(set) var flipCount = 0
+    
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
@@ -26,6 +28,7 @@ struct Concentration {
     mutating func chooseCard(at index:Int) {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): chosen index not in the cards")
         if !cards[index].isMatched {
+            flipCount += 1
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[matchIndex] == cards[index] {
                     cards[matchIndex].isMatched = true
