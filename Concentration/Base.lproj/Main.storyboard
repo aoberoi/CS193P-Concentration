@@ -172,14 +172,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-PC-Y79">
+                                <rect key="frame" x="116.33333333333333" y="730" width="142.66666666666669" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evb-0L-dUk">
-                                <rect key="frame" x="125.66666666666666" y="730" width="123.66666666666666" height="48"/>
+                                <rect key="frame" x="125" y="674" width="123.66666666666669" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apA-db-p1p">
-                                <rect key="frame" x="92.666666666666686" y="662" width="190" height="60"/>
+                                <rect key="frame" x="92" y="606" width="190" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="New Game">
@@ -193,18 +199,21 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Evb-0L-dUk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4GW-zw-9Te"/>
+                            <constraint firstItem="NJ9-PC-Y79" firstAttribute="top" secondItem="Evb-0L-dUk" secondAttribute="bottom" constant="8" id="8AR-gB-8OM"/>
                             <constraint firstItem="OqG-aJ-ZUb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NSv-3B-Nf9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Evb-0L-dUk" secondAttribute="bottom" id="VQ1-kQ-tev"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NJ9-PC-Y79" secondAttribute="bottom" id="Oq2-JY-6jO"/>
                             <constraint firstItem="Evb-0L-dUk" firstAttribute="top" secondItem="apA-db-p1p" secondAttribute="bottom" constant="8" symbolic="YES" id="baW-IP-mZP"/>
                             <constraint firstItem="apA-db-p1p" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OqG-aJ-ZUb" secondAttribute="bottom" constant="8" symbolic="YES" id="k21-Te-pOH"/>
                             <constraint firstItem="apA-db-p1p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="myg-B2-HyO"/>
                             <constraint firstItem="OqG-aJ-ZUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ngt-JW-y2Z"/>
+                            <constraint firstItem="NJ9-PC-Y79" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uGT-zd-s6t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OqG-aJ-ZUb" secondAttribute="trailing" constant="16" id="ydH-st-ShS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="Evb-0L-dUk" id="AIC-wD-QG3"/>
+                        <outlet property="scoreLabel" destination="NJ9-PC-Y79" id="Zhv-if-cjb"/>
                         <outletCollection property="cardButtons" destination="0us-rB-GNs" collectionClass="NSMutableArray" id="8fY-yw-Vu4"/>
                         <outletCollection property="cardButtons" destination="3Aj-5n-viY" collectionClass="NSMutableArray" id="mRH-6B-7Yv"/>
                         <outletCollection property="cardButtons" destination="2cX-av-3K4" collectionClass="NSMutableArray" id="DTt-e3-t87"/>

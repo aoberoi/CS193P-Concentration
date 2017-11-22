@@ -16,18 +16,30 @@ class ViewController: UIViewController {
         return (cardButtons.count + 1) / 2
     }
     
+    private let labelAttributes: [NSAttributedStringKey:Any] = [
+        .strokeWidth : 5.0,
+        .strokeColor : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1),
+    ];
+    
     private func updateFlipCountLabel() {
-        let attributes: [NSAttributedStringKey:Any] = [
-            .strokeWidth : 5.0,
-            .strokeColor : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1),
-            ];
-        let attributedString = NSAttributedString(string: "Flips: \(game.flipCount)", attributes: attributes)
+        let attributedString = NSAttributedString(string: "Flips: \(game.flipCount)", attributes: labelAttributes)
         flipCountLabel.attributedText = attributedString
+    }
+    
+    private func updateScoreLabel() {
+        let attributedString = NSAttributedString(string: "Score: \(game.score)", attributes: labelAttributes)
+        scoreLabel.attributedText = attributedString
     }
 
     @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
             updateFlipCountLabel()
+        }
+    }
+    
+    @IBOutlet private weak var scoreLabel: UILabel! {
+        didSet {
+            updateScoreLabel()
         }
     }
     
@@ -44,6 +56,7 @@ class ViewController: UIViewController {
     
     @IBAction func newGameTapped() {
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        emojiChoices = generateEmojiChoices()
         theme = pickRandomTheme()
         updateViewFromModel()
     }
@@ -61,6 +74,7 @@ class ViewController: UIViewController {
             }
         }
         updateFlipCountLabel()
+        updateScoreLabel()
     }
     
     private lazy var theme = pickRandomTheme()
@@ -70,14 +84,18 @@ class ViewController: UIViewController {
         return themes[themes.count.arc4random]
     }
     
-    private var emojiChoices: [String:String] = [
-        "halloween": "🦇😱🙀😈🎃👻🍭🍬🍎",
-        "sports": "⚽️🏀🏈🎾🏒🎳🏆🏄🏌️⚾️",
-        "faces": "😀🙃😍🤡😎☹️🤔😴😡",
-        "travel": "🚗🛴🚎🚃🚀✈️🚂🏎🚤",
-        "food": "🍪🍩🍣🥗🍟🌮🍔🌭🍕🥞🍳",
-        "animals": "🐶🐱🦁🐰🐷🐵🐔🐴🐍🐟🐙"
-    ];
+    private lazy var emojiChoices: [String:String] = generateEmojiChoices()
+    
+    private func generateEmojiChoices() -> [String:String] {
+        return [
+            "halloween": "🦇😱🙀😈🎃👻🍭🍬🍎",
+            "sports": "⚽️🏀🏈🎾🏒🎳🏆🏄🏌️⚾️",
+            "faces": "😀🙃😍🤡😎☹️🤔😴😡",
+            "travel": "🚗🛴🚎🚃🚀✈️🚂🏎🚤",
+            "food": "🍪🍩🍣🥗🍟🌮🍔🌭🍕🥞🍳",
+            "animals": "🐶🐱🦁🐰🐷🐵🐔🐴🐍🐟🐙"
+        ];
+    };
     
     private var emoji = [Card:String]()
     

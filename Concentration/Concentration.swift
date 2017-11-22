@@ -14,6 +14,10 @@ struct Concentration {
     
     private(set) var flipCount = 0
     
+    private(set) var score = 0
+    
+    private var previouslyInvolvedInMismatch = Set<Card>()
+    
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
             return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
@@ -31,8 +35,17 @@ struct Concentration {
             flipCount += 1
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[matchIndex] == cards[index] {
+                    score += 2
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                } else {
+                    for card in [cards[matchIndex], cards[index]] {
+                        if previouslyInvolvedInMismatch.contains(card) {
+                            score -= 1;
+                        } else {
+                            previouslyInvolvedInMismatch.insert(card)
+                        }
+                    }
                 }
                 cards[index].isFaceUp = true
             } else {
