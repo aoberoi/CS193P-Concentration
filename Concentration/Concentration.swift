@@ -44,12 +44,25 @@ struct Concentration {
             let card = Card()
             cards += [card, card]
         }
-        // TODO: shuffle the cards
+        cards.shuffle()
     }
 }
 
 extension Collection {
     var oneAndOnly: Element? {
         return count == 1 ? first : nil
+    }
+}
+
+extension MutableCollection {
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffledIndex, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            let randomDistance: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            let randomUnshuffledIndex = index(firstUnshuffledIndex, offsetBy:randomDistance)
+            swapAt(firstUnshuffledIndex, randomUnshuffledIndex)
+        }
     }
 }
