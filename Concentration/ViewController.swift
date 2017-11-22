@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     
     @IBAction func newGameTapped() {
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        theme = pickRandomTheme()
         flipCount = 0;
         updateViewFromModel()
     }
@@ -69,15 +70,30 @@ class ViewController: UIViewController {
         }
     }
     
-    // private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
-    private var emojiChoices = "🦇😱🙀😈🎃👻🍭🍬🍎"
+    private lazy var theme = pickRandomTheme()
+    
+    private func pickRandomTheme() -> String {
+        let themes = Array(emojiChoices.keys)
+        return themes[themes.count.arc4random]
+    }
+    
+    private var emojiChoices: [String:String] = [
+        "halloween": "🦇😱🙀😈🎃👻🍭🍬🍎",
+        "sports": "⚽️🏀🏈🎾🏒🎳🏆🏄🏌️⚾️",
+        "faces": "😀🙃😍🤡😎☹️🤔😴😡",
+        "travel": "🚗🛴🚎🚃🚀✈️🚂🏎🚤",
+        "food": "🍪🍩🍣🥗🍟🌮🍔🌭🍕🥞🍳",
+        "animals": "🐶🐱🦁🐰🐷🐵🐔🐴🐍🐟🐙"
+    ];
     
     private var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String {
+        var emojiChoices = self.emojiChoices[theme]!
         if emoji[card] == nil, emojiChoices.count > 0 {
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
             emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
+            self.emojiChoices[theme] = emojiChoices
         }
         return emoji[card] ?? "?"
     }
