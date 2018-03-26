@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -214,22 +214,22 @@
                     <connections>
                         <outlet property="flipCountLabel" destination="Evb-0L-dUk" id="AIC-wD-QG3"/>
                         <outlet property="scoreLabel" destination="NJ9-PC-Y79" id="Zhv-if-cjb"/>
-                        <outletCollection property="cardButtons" destination="0us-rB-GNs" collectionClass="NSMutableArray" id="8fY-yw-Vu4"/>
-                        <outletCollection property="cardButtons" destination="3Aj-5n-viY" collectionClass="NSMutableArray" id="mRH-6B-7Yv"/>
-                        <outletCollection property="cardButtons" destination="2cX-av-3K4" collectionClass="NSMutableArray" id="DTt-e3-t87"/>
-                        <outletCollection property="cardButtons" destination="6IG-7D-zgb" collectionClass="NSMutableArray" id="aHv-JN-oQl"/>
-                        <outletCollection property="cardButtons" destination="hfM-ut-kXo" collectionClass="NSMutableArray" id="ohv-bN-UUp"/>
-                        <outletCollection property="cardButtons" destination="XVb-fZ-ujn" collectionClass="NSMutableArray" id="zD4-Rh-nO3"/>
-                        <outletCollection property="cardButtons" destination="VjP-k1-s2p" collectionClass="NSMutableArray" id="egy-0t-1PV"/>
-                        <outletCollection property="cardButtons" destination="aAi-cK-0we" collectionClass="NSMutableArray" id="T0W-to-GaR"/>
-                        <outletCollection property="cardButtons" destination="Jlu-71-8IQ" collectionClass="NSMutableArray" id="Pgl-c7-vMG"/>
-                        <outletCollection property="cardButtons" destination="qSs-iF-zt0" collectionClass="NSMutableArray" id="2z8-zW-GXq"/>
-                        <outletCollection property="cardButtons" destination="l1Z-tQ-1ty" collectionClass="NSMutableArray" id="jTz-2G-dEl"/>
-                        <outletCollection property="cardButtons" destination="fTo-r4-sDY" collectionClass="NSMutableArray" id="pET-Br-Mge"/>
-                        <outletCollection property="cardButtons" destination="Vto-ae-uhD" collectionClass="NSMutableArray" id="ThP-j3-g8b"/>
-                        <outletCollection property="cardButtons" destination="gMl-GD-eYE" collectionClass="NSMutableArray" id="iwv-Q6-EhH"/>
-                        <outletCollection property="cardButtons" destination="zLK-Bd-0fv" collectionClass="NSMutableArray" id="iqG-KT-IMx"/>
-                        <outletCollection property="cardButtons" destination="7g2-zf-Gdt" collectionClass="NSMutableArray" id="3XZ-Dk-IMo"/>
+                        <outletCollection property="cardButtons" destination="3Aj-5n-viY" collectionClass="NSMutableArray" id="pfp-fu-VJF"/>
+                        <outletCollection property="cardButtons" destination="2cX-av-3K4" collectionClass="NSMutableArray" id="qJg-vx-pdX"/>
+                        <outletCollection property="cardButtons" destination="6IG-7D-zgb" collectionClass="NSMutableArray" id="DhA-vQ-5Wh"/>
+                        <outletCollection property="cardButtons" destination="0us-rB-GNs" collectionClass="NSMutableArray" id="c2S-3C-gCg"/>
+                        <outletCollection property="cardButtons" destination="VjP-k1-s2p" collectionClass="NSMutableArray" id="ZH7-J5-4VQ"/>
+                        <outletCollection property="cardButtons" destination="aAi-cK-0we" collectionClass="NSMutableArray" id="c9o-U3-83i"/>
+                        <outletCollection property="cardButtons" destination="XVb-fZ-ujn" collectionClass="NSMutableArray" id="Ci5-ys-XeO"/>
+                        <outletCollection property="cardButtons" destination="hfM-ut-kXo" collectionClass="NSMutableArray" id="lZz-0I-aaU"/>
+                        <outletCollection property="cardButtons" destination="fTo-r4-sDY" collectionClass="NSMutableArray" id="wCL-gz-nYL"/>
+                        <outletCollection property="cardButtons" destination="l1Z-tQ-1ty" collectionClass="NSMutableArray" id="LbI-9M-RsF"/>
+                        <outletCollection property="cardButtons" destination="qSs-iF-zt0" collectionClass="NSMutableArray" id="2gw-E7-ByU"/>
+                        <outletCollection property="cardButtons" destination="Jlu-71-8IQ" collectionClass="NSMutableArray" id="MHP-Cy-Tcu"/>
+                        <outletCollection property="cardButtons" destination="Vto-ae-uhD" collectionClass="NSMutableArray" id="Nl7-1V-3Y9"/>
+                        <outletCollection property="cardButtons" destination="gMl-GD-eYE" collectionClass="NSMutableArray" id="SZ2-uv-Elu"/>
+                        <outletCollection property="cardButtons" destination="zLK-Bd-0fv" collectionClass="NSMutableArray" id="p4Q-e9-TDm"/>
+                        <outletCollection property="cardButtons" destination="7g2-zf-Gdt" collectionClass="NSMutableArray" id="4q7-ud-EFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
